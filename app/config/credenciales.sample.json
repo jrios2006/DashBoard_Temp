@@ -1,0 +1,15 @@
+{
+  "database": {
+    "host": "localhost",
+    "user": "usuario",
+    "password": "contraseña",
+    "database": "telemetria"
+  },
+  "smtp": [
+    "remitente@dominio.com",
+    "smtp.dominio.com",
+    465,
+    "usuario",
+    "contraseña"
+  ]
+}
