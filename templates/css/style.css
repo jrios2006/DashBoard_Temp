@@ -1,0 +1,139 @@
+/* =====================================================================
+   style.css
+   Dashboard de Telemetría CPD
+   ===================================================================== */
+
+/* ---------------------------
+   Estilos globales del body
+---------------------------- */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: #f5f7fa;
+}
+
+/* ---------------------------
+   Contenedor principal
+---------------------------- */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* ---------------------------
+   Titulares
+---------------------------- */
+h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+.subtitle {
+    text-align: center;
+    color: #7f8c8d;
+    margin-bottom: 30px;
+}
+
+/* ---------------------------
+   Banner de alertas
+   Se muestra/oculta según eventos de temperatura
+---------------------------- */
+#alert-banner {
+    padding: 16px;
+    margin: 15px 0;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.1em;
+    display: none; /* por defecto oculto */
+    animation: pulse 1.8s infinite;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Tipos de alertas */
+#alert-banner.roja { background: #c0392b; }     /* Crítica */
+#alert-banner.amarilla { background: #e67e22; } /* Advertencia */
+#alert-banner.azul { background: #2980b9; }     /* Información / baja prioridad */
+
+/* ---------------------------
+   Controles de la interfaz
+---------------------------- */
+.controls {
+    margin-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+select, button {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* Botones con colores específicos */
+.btn-refresh { background: #3498db; color: white; border: none; cursor: pointer; }
+.btn-export { background: #27ae60; }
+
+/* Indicador de carga */
+#loading { color: #e67e22; font-weight: bold; }
+
+/* ---------------------------
+   Tarjetas de información / alertas
+---------------------------- */
+.card {
+    background: #f8f9fa;
+    padding: 16px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border-left: 5px solid #3498db;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* Variantes de tarjetas según severidad */
+.card.danger {
+    border-left-color: #e74c3c !important;
+    background: rgba(231,76,60,0.18) !important;
+    animation: pulse 2s infinite;
+}
+.card.warning {
+    border-left-color: #e67e22;
+    background: rgba(230,126,34,0.12);
+}
+
+/* Badges para alertas dentro de las tarjetas */
+.alert-badge {
+    margin-top: 8px;
+    padding: 6px 12px;
+    background: #e74c3c;
+    color: white;
+    border-radius: 20px;
+    font-size: 0.9em;
+    display: inline-block;
+}
+
+/* ---------------------------
+   Animaciones
+---------------------------- */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(231,76,60,0.4); }
+    70% { box-shadow: 0 0 0 14px rgba(231,76,60,0); }
+    100% { box-shadow: 0 0 0 0 rgba(231,76,60,0); }
+}
+
+/* ---------------------------
+   Gráficos (canvas)
+---------------------------- */
+canvas {
+    margin-top: 30px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    height: 420px !important;
+}

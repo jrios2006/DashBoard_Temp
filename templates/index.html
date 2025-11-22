@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Telemetría CPD - Tiempo Real</title>
+
+  <!-- Estilos principales del dashboard -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Librerías externas -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+</head>
+<body>
+  <!-- Contenedor principal del dashboard -->
+  <div class="container">
+
+    <!-- Título principal -->
+    <h1>Telemetría Sensores CPD</h1>
+    <p class="subtitle">Monitorización en tiempo real de temperatura y humedad</p>
+
+    <!-- Banner de alertas -->
+    <!-- Se mostrará dinámicamente con JS cuando haya alertas -->
+    <div id="alert-banner"><span id="alert-text"></span></div>
+
+    <!-- Controles de filtrado y acciones -->
+    <div class="controls">
+      <!-- Selector de ubicación -->
+      <label><strong>Ubicación:</strong></label>
+      <select id="locationFilter">
+        <option value="">Todas las ubicaciones</option>
+      </select>
+
+      <!-- Selector de periodo histórico -->
+      <label><strong>Período:</strong></label>
+      <select id="daysFilter">
+        <option value="1">Últimas 24 horas</option>
+        <option value="7" selected>Últimos 7 días</option>
+        <option value="30">Últimos 30 días</option>
+      </select>
+
+      <!-- Botones de acciones -->
+      <button class="btn-refresh" id="refreshBtn">Actualizar</button>
+      <button class="btn-refresh btn-export" id="exportBtn">Exportar CSV</button>
+
+      <!-- Indicador de carga -->
+      <span id="loading" style="display:none;">Cargando...</span>
+    </div>
+
+    <!-- Lecturas en tiempo real -->
+    <div id="current-readings">
+      <p><em>Conectando al servidor WebSocket...</em></p>
+    </div>
+
+    <!-- Gráfico de temperatura y humedad -->
+    <canvas id="tempChart"></canvas>
+  </div>
+
+  <!-- Scripts de la aplicación -->
+  <script src="js/alerts.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

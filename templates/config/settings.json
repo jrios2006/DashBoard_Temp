@@ -1,0 +1,12 @@
+{
+  "thresholds": {
+    "danger": 26,
+    "warning": 24
+  },
+  "colors": {
+    "danger": "#e74c3c",
+    "warning": "#e67e22",
+    "info": "#3498db"
+  },
+  "chartColors": ["#e74c3c","#3498db","#2ecc71","#f1c40f","#9b59b6","#1abc9c","#e67e22"]
+}
