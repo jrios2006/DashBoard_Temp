@@ -1,0 +1,18 @@
+{
+  "thresholds": {
+    "danger": 29,
+    "warning": 26    
+  },
+  "email": {
+    "enabled": true,
+    "destinatarios": ["jrios@safetyhp.com"],
+    "intervalo_envio_min": 180,
+    "enviar_alertas": false
+  },
+  "alertas": {
+    "detectar_spikes": true,
+    "spike_critica": 4.0,
+    "spike_media": 2.5,
+    "tiempo_spike_minutos": 10
+  }
+}
