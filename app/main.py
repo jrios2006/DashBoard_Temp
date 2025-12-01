@@ -130,6 +130,7 @@ async def websocket_endpoint(websocket: WebSocket, location_filter: str):
     Cada 5 segundos envía los datos actuales.
     """
     await websocket.accept()
+    print("Headers:", websocket.headers)
     print(f"[WS] Cliente conectado → filtro: '{location_filter}'")
 
     filter_val = None if location_filter in ("null", "undefined", "", None) else location_filter
